@@ -53,6 +53,9 @@ body {
 .btn-primary:hover {
     background-color: #0056b3;
 }
+.btn-custom {
+            width: 200px; /* Fixed width for equal button sizes */
+        }
 
 /* Error Messages */
 .text-danger {
@@ -65,4 +68,26 @@ h2 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 15px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table th, .table td {
+            text-align: center;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+.description-column {
+    width: 20%; /* Ensuring equal column width for descriptions */
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.other-column{
+    width: 15%; /* Ensuring equal column width for descriptions */
+    white-space: normal;
+    word-wrap: break-word;
 }
