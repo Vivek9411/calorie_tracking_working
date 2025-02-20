@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="text-center">
+        <h2>Welcome, {{ name }}!</h2>
+        <p>Manage your calorie intake and exercise from here.</p>
+        <div class="btn-group">
+            <a href="{{ url_for('add_calorie_intake') }}" class="btn btn-success">Add Calorie Intake</a>
+            <a href="{{ url_for('add_exercise_done') }}" class="btn btn-info">Add Exercise</a>
+        </div>
+        <br><br>
+        <div class="btn-group">
+            <a href="{{ url_for('daily_report') }}" class="btn btn-warning">Daily Report</a>
+            <a href="{{ url_for('weekly_report') }}" class="btn btn-warning">Weekly Report</a>
+            <a href="{{ url_for('monthly_report') }}" class="btn btn-warning">Monthly Report</a>
+        </div>
+    </div>
+{% endblock %}

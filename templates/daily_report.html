@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Daily Report</h2>
+    <h3>Food Intake</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Food</th>
+                <td>amount (gm)</td>
+                <th>Description</th>
+                <th>Calories</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in food_intake %}
+            <tr>
+                <td>{{ item.date }}</td>
+                <td>{{ item.time }}</td>
+                <td>{{ item.food }}</td>
+                <td>{{item.amount}}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.calories }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                 <tr>
+                <td ><strong>Total Intake</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td ><strong>{{ total_intake }}</strong></td>
+            </tr>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h3>Exercise Done</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Exercise</th>
+                <th>Duration (min)</th>
+                <th>Description</th>
+                <th>Calories Burned</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in exercise_done %}
+            <tr>
+                <td>{{ item.date }}</td>
+                <td>{{ item.time }}</td>
+                <td>{{ item.exercise }}</td>
+                <td>{{ item.duration}}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.calories_burned }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td ><strong>Total Burned</strong></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td ><strong>{{ total_burned }}</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<div class="mt-4 px-2 d-flex justify-content-end">
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

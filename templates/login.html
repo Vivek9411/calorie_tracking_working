@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Login</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.email.label }} {{ form.email() }}
+        {{ form.password.label }} {{ form.password() }}
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+<div class="mt-4 px-2 d-flex justify-content-end">
+    <a href="{{ url_for('home') }}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}
